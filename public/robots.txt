@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petparadiseee.netlify.app/sitemap.xml

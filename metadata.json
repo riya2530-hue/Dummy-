@@ -1,0 +1,8 @@
+{
+  "name": "PetParadise",
+  "description": "A product-based website for pet accessories including Home, About Us, Products, Blog, and Contact Us pages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
