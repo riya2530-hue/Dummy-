@@ -36,14 +36,14 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>PetParadise – Premium Pet Accessories for Happy, Healthy Pets</title>
-        <meta name="description" content="Buy premium pet accessories including collars, toys, beds and grooming products at PetParadise. Quality products for dogs and cats." />
-        <link rel="canonical" href="https://petparadiseee.netlify.app/" />
+        <title>Premium Pet Accessories for Dogs & Cats | PetParadise</title>
+        <meta name="description" content="Shop premium dog and cat accessories including collars, beds, toys, grooming supplies, and feeding essentials. Quality products at affordable prices." />
+        <link rel="canonical" href="https://petparadise-seven.vercel.app/" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org/", 
-              "@type": "Product", 
+              "@type": "website", 
               "name": "Premium Dog Collar",
               "image": "",
               "description": "Stylish and durable dog collar for pets with premium quality material.",
