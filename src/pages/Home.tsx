@@ -39,53 +39,58 @@ export default function Home() {
         <title>Premium Pet Accessories for Dogs & Cats | PetParadise</title>
         <meta name="description" content="Shop premium dog and cat accessories including collars, beds, toys, grooming supplies, and feeding essentials. Quality products at affordable prices." />
         <link rel="canonical" href="https://petparadise-seven.vercel.app/" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org/", 
-              "@type": "website", 
-              "name": "Premium Dog Collar",
-              "image": "",
-              "description": "Stylish and durable dog collar for pets with premium quality material.",
-              "brand": {
-                "@type": "Brand",
-                "name": "PetParadise"
-              },
-              "sku": "PPD-DC-001",
-              "offers": {
-                "@type": "Offer",
-                "url": "",
-                "priceCurrency": "USD",
-                "price": "14.9",
-                "priceValidUntil": "2026-12-31",
-                "availability": "https://schema.org/InStock",
-                "itemCondition": "https://schema.org/NewCondition"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4",
-                "bestRating": "5",
-                "worstRating": "1",
-                "ratingCount": "1",
-                "reviewCount": "1"
-              },
-              "review": {
-                "@type": "Review",
-                "name": "Aman Varma",
-                "reviewBody": "Good quality product with fast delivery. My dog loves it.",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "4",
-                  "bestRating": "5",
-                  "worstRating": "1"
-                },
-                "datePublished": "2026-08-06",
-                "author": {"@type": "Person", "name": "Aman Verma"},
-                "publisher": {"@type": "Organization", "name": "PetParadise"}
-              }
-            }
-          `}
-        </script>
+        <meta property="og:type" content="website" />
+
+<meta
+  property="og:title"
+  content="Premium Pet Accessories for Dogs & Cats | PetParadise"
+/>
+
+<meta
+  property="og:description"
+  content="Shop premium dog and cat accessories including collars, beds, toys, grooming supplies, and feeding essentials. Quality products at affordable prices."
+/>
+
+<meta
+  property="og:url"
+  content="https://petparadise-seven.vercel.app/"
+/>
+
+<meta
+  property="og:image"
+  content="https://petparadise-seven.vercel.app/og-image.jpg"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta
+  name="twitter:title"
+  content="Premium Pet Accessories for Dogs & Cats | PetParadise"
+/>
+
+<meta
+  name="twitter:description"
+  content="Shop premium dog and cat accessories including collars, beds, toys, grooming supplies, and feeding essentials. Quality products at affordable prices."
+/>
+
+<meta
+  name="twitter:image"
+  content="https://petparadise-seven.vercel.app/og-image.jpg"
+/>
+      <script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PetParadise",
+  "url": "https://petparadise-seven.vercel.app/",
+  "description": "PetParadise is an online pet store offering premium accessories for dogs and cats.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetParadise"
+  }
+}
+`}
+</script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-rose-500 via-orange-500 to-rose-600 overflow-hidden border-b border-rose-400/30">
