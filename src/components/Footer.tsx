@@ -16,6 +16,11 @@ export default function Footer() {
             <p className="text-slate-600 text-sm leading-relaxed font-medium">
               Curating the finest in luxury accessories for your cherished companions. Elevate every moment.
             </p>
+            <div className="mt-6 text-sm text-slate-600 space-y-1">
+  <p><strong>Business Hours</strong></p>
+  <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
+  <p>Sunday: Closed</p>
+</div>
           </div>
           
           <div>
@@ -32,18 +37,31 @@ export default function Footer() {
           <div>
             <h3 className="font-sans font-extrabold text-lg mb-6 text-slate-900 tracking-wide">Legal & Care</h3>
             <ul className="space-y-4">
-              <li><Link to="#" className="text-slate-500 hover:text-rose-500 transition-colors text-sm uppercase tracking-wider font-bold">Privacy Policy</Link></li>
-              <li><Link to="#" className="text-slate-500 hover:text-rose-500 transition-colors text-sm uppercase tracking-wider font-bold">Terms & Conditions</Link></li>
+              <li><Link to="/privacy-policy"  className="text-slate-500 hover:text-rose-500 transition-colors text-sm uppercase tracking-wider font-bold">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions" className="text-slate-500 hover:text-rose-500 transition-colors text-sm uppercase tracking-wider font-bold">Terms & Conditions</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-sans font-extrabold text-lg mb-6 text-slate-900 tracking-wide">Social Society</h3>
+            <p className="text-slate-600 text-sm mb-2">
+  📧 riyabhudhiraja2530@gmail.com
+</p>
+<p className="text-slate-600 text-sm mb-2">
+  📞 Your Phone Number
+</p>
+<p className="text-slate-600 text-sm mb-5">
+  📍 Kurukshetra, Haryana, India
+</p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-xl border border-rose-200 bg-white flex items-center justify-center text-rose-400 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition-colors">
+              <a href="https://www.facebook.com/PetParadisespets/"
+  target="_blank"
+  rel="noopener noreferrer" className="w-10 h-10 rounded-xl border border-rose-200 bg-white flex items-center justify-center text-rose-400 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-xl border border-rose-200 bg-white flex items-center justify-center text-rose-400 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition-colors">
+              <a href="https://www.instagram.com/petdise/"
+  target="_blank"
+  rel="noopener noreferrer" className="w-10 h-10 rounded-xl border border-rose-200 bg-white flex items-center justify-center text-rose-400 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-xl border border-rose-200 bg-white flex items-center justify-center text-rose-400 hover:text-rose-600 hover:border-rose-400 hover:bg-rose-50 transition-colors">

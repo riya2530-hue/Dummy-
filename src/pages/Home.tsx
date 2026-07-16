@@ -93,7 +93,7 @@ export default function Home() {
 </script>
       </Helmet>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-rose-500 via-orange-500 to-rose-600 overflow-hidden border-b border-rose-400/30">
+      <section className="bg-gradient-to-br from-orange-50 via-white to-pink-50" via-orange-500 to-rose-600 overflow-hidden border-b border-rose-400/30">
         {/* Subtle sophisticated background: glowing radial gradient and dark elegant texture */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/20 rounded-full blur-[120px] opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
@@ -114,23 +114,29 @@ export default function Home() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl xl:text-7xl font-sans font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-                  Stylish and Affordable <br />
+                  Everything Your Pet Needs,All in One Place
+                 <br />
                   <span className="text-white pb-2 inline-block drop-shadow-sm">Pet Accessories</span>
                 </h1>
                 
                 <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-lg font-medium">
-                  Your trusted destination for premium pet accessories designed to keep your companions happy, healthy, and exceptionally stylish. 
+                   Discover premium accessories for dogs and cats, including cozy beds, stylish collars, fun toys, grooming products, and feeding essentials—all in one place.
                   <span className="block mt-4 text-white/80 hidden sm:block font-medium text-sm">
                     At PetParadise, we treat pets like family. That's why we curate only the finest accessories, from plush artisan beds to resilient, luxurious collars.
                   </span>
                 </p>
+                <div className="flex flex-wrap gap-6 mt-8 text-sm font-medium text-white">
+                  <span>🐶 5,000+ Happy Pets</span>
+                  <span>🚚 Free Shipping</span>
+                 <span>⭐ 4.9/5 Customer Rating</span>
+                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mt-10">
                   <Link to="/products" className="inline-flex justify-center items-center px-8 py-4 text-sm uppercase tracking-wider font-bold rounded-xl shadow-lg shadow-black/10 text-rose-600 bg-white hover:bg-rose-50 hover:-translate-y-0.5 transition-all duration-300">
-                    Curated Collection
+                    SHOP NOW
                   </Link>
                   <Link to="/products" className="inline-flex justify-center items-center px-8 py-4 border-2 border-white/50 text-sm uppercase tracking-wider font-bold rounded-xl text-white hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
-                    Discover More
+                  EXPLORE COLLECTIONS
                   </Link>
                 </div>
               </motion.div>
@@ -257,17 +263,37 @@ export default function Home() {
                 className="group cursor-pointer rounded-2xl overflow-hidden bg-white border border-rose-50 hover:shadow-2xl hover:border-rose-100 transition-all duration-500 pb-4"
               >
                 <div className="h-64 overflow-hidden relative bg-rose-50/50 mb-6 m-2 rounded-xl">
+                <div className="absolute top-3 left-3 bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+  Best Seller
+</div>
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover mix-blend-multiply group-hover:scale-110 transition duration-700 ease-out" />
                   <div className="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 </div>
                 <div className="px-6">
                   <h3 className="font-sans font-bold text-lg text-slate-800 mb-2 truncate group-hover:text-rose-500 transition-colors">{product.name}</h3>
+                  <div className="flex items-center gap-1 mt-2 mb-3">
+  {[...Array(5)].map((_, i) => (
+    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+  ))}
+  <span className="text-sm text-slate-500 ml-2">(4.9)</span>
+</div>
                   <div className="flex justify-between items-center mt-4">
-                    <span className="text-lg font-black text-slate-700">${product.price}</span>
+                    <div className="flex items-center gap-2">
+  <span className="text-xl font-black text-rose-600">
+    ${product.price}
+  </span>
+
+  <span className="text-sm text-slate-400 line-through">
+    $39.99
+  </span>
+</div>
                     <button className="text-[10px] uppercase tracking-widest font-bold border-2 border-rose-200 text-rose-600 rounded-xl px-4 py-2 hover:bg-rose-500 hover:text-white hover:border-rose-500 transition duration-300">
                       Add to Cart
                     </button>
                   </div>
+                  <p className="text-green-600 text-xs font-semibold mt-2">
+  ✓ Free Shipping
+</p>
                 </div>
               </motion.div>
             ))}
@@ -302,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-gradient-to-br from-rose-500 via-orange-500 to-rose-600 relative overflow-hidden">
+      <section className="<section className="py-24 bg-gradient-to-br from-rose-500 via-orange-500 to-orange-600 relative overflow-hidden">">
         {/* Subtle royal pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.15)_0,_transparent_100%)]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
