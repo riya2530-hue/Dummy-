@@ -93,7 +93,7 @@ export default function Home() {
 </script>
       </Helmet>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 via-white to-pink-50" via-orange-500 to-rose-600 overflow-hidden border-b border-rose-400/30">
+      <section className="bg-gradient-to-br from-orange-500 via-orange-500 to-rose-600 overflow-hidden border-b border-rose-400/30">
         {/* Subtle sophisticated background: glowing radial gradient and dark elegant texture */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/20 rounded-full blur-[120px] opacity-60 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
