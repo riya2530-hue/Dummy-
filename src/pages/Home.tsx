@@ -328,8 +328,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="<section className="py-24 bg-gradient-to-br from-rose-500 via-orange-500 to-orange-600 relative overflow-hidden">">
-        {/* Subtle royal pattern */}
+<section className="py-24 bg-gradient-to-br from-rose-500 via-orange-500 to-orange-600 relative overflow-hidden">     
+     {/* Subtle royal pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.15)_0,_transparent_100%)]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
