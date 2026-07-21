@@ -1,4 +1,6 @@
+import toast from "react-hot-toast";
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import { ShoppingCart } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
@@ -9,6 +11,9 @@ import nailClipperImg from '../assets/images/nail_clipper_1781764290341.jpg';
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState("default");
+  const { addToCart } = useCart();
 
   const categories = ['All', 'Dog Collection', 'Cat Collection', 'Feeding Accessories', 'Grooming Essentials'];
 
@@ -55,9 +60,34 @@ export default function Products() {
     }
   ];
 
-  const filteredProducts = activeCategory === 'All' 
-    ? productsData 
-    : productsData.filter(p => p.category === activeCategory);
+  const filteredProducts = productsData.filter((product) => {
+  const matchesCategory =
+    activeCategory === "All" || product.category === activeCategory;
+
+  const matchesSearch = product.name
+    .toLowerCase()
+    .includes(searchTerm.toLowerCase());
+
+  return matchesCategory && matchesSearch;
+});
+const sortedProducts = [...filteredProducts].sort((a, b) => {
+  switch (sortBy) {
+    case "low-high":
+      return a.price - b.price;
+
+    case "high-low":
+      return b.price - a.price;
+
+    case "a-z":
+      return a.name.localeCompare(b.name);
+
+    case "z-a":
+      return b.name.localeCompare(a.name);
+
+    default:
+      return 0;
+  }
+});
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
@@ -85,6 +115,28 @@ export default function Products() {
       </section>
 
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-center mb-8">
+  <input
+    type="text"
+    placeholder="🔍 Search products..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+    className="w-full max-w-md border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-500"
+  />
+</div>
+<div className="flex justify-end mb-8">
+  <select
+    value={sortBy}
+    onChange={(e) => setSortBy(e.target.value)}
+    className="border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-500"
+  >
+    <option value="default">Sort By</option>
+    <option value="low-high">Price: Low to High</option>
+    <option value="high-low">Price: High to Low</option>
+    <option value="a-z">Name: A-Z</option>
+    <option value="z-a">Name: Z-A</option>
+  </select>
+</div>
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((cat) => (
             <button
@@ -103,7 +155,7 @@ export default function Products() {
 
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           <AnimatePresence>
-            {filteredProducts.map((product) => (
+           {sortedProducts.map((product) => (
               <motion.div 
                 key={product.name}
                 layout
@@ -128,8 +180,18 @@ export default function Products() {
                   </ul>
                   <div className="flex justify-between items-center mt-auto border-t border-rose-100 pt-6">
                     <span className="text-xl font-black text-slate-700">${product.price}</span>
-                    <button className="border-2 border-rose-200 text-rose-600 p-3 rounded-xl hover:bg-rose-500 hover:text-white hover:border-rose-500 transition-colors flex items-center justify-center">
-                      <ShoppingCart className="w-4 h-4" />
+                    <button
+                    onClick={() => {
+    addToCart({
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    toast.success(`${product.name} added to cart!`);
+  }}
+ 
+className="border-2 border-rose-200 text-rose-600 p-3 rounded-xl hover:bg-rose-500 hover:text-white hover:border-rose-500 transition-colors flex items-center justify-center cursor-pointer" >
+                      <ShoppingCart className="w-4 h-4 pointer-events-none" />
                     </button>
                   </div>
                 </div>

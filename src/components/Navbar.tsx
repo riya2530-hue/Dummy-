@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
-import { PawPrint, Menu, X } from 'lucide-react';
+import { PawPrint, Menu, X, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { cart } = useCart();
 
   const links = [
     { name: 'Home', path: '/' },
@@ -46,6 +48,18 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+           <Link
+  to="/cart"
+  className="relative text-slate-600 hover:text-rose-500 transition-colors cursor-pointer"
+>
+  <ShoppingCart className="w-6 h-6" />
+
+  {cart.length > 0 && (
+    <span className="absolute -top-2 -right-2 bg-rose-500 text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+      {cart.reduce((total, item) => total + item.quantity, 0)}
+    </span>
+  )}
+</Link>
           </div>
 
           {/* Mobile Menu Button */}
